@@ -5,9 +5,6 @@
 
 
 
-
-
-
 def converter (tempC):
     tempF = round(tempC * (9/5) + 32)
     return tempF
