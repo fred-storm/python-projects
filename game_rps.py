@@ -1,8 +1,8 @@
 import random
 
 
-def computer_choice ():
-    comp_decision = random.randint(1,3)
+def computer_choice():
+    comp_decision = random.randint(1, 3)
     computer_hand = "unassigned"
     match comp_decision:
         case 1:
@@ -15,11 +15,14 @@ def computer_choice ():
             computer_hand = "null"
     return computer_hand
 
+
 def player_choice():
-    player_pick = int(input("""Pick 1 for rock:
+    player_pick = int(
+        input("""Pick 1 for rock:
     2 for paper:
     3 for scissors:
-    your choice?: """))
+    your choice?: """)
+    )
     player_hand = "unassigned"
     match player_pick:
         case 1:
@@ -32,6 +35,7 @@ def player_choice():
             player_hand = "null"
 
     return player_hand
+
 
 game_choice = input("Do you want to play a game?")
 if game_choice == "yes":
@@ -46,7 +50,7 @@ print(computer_pick, player_pick)
 if player_pick == computer_pick:
     print("Its a tie!")
     print("You picked:", player_pick, " The computer picked;", computer_pick)
-elif player_pick == "rock" and  computer_pick =="scissors":
+elif player_pick == "rock" and computer_pick == "scissors":
     print("Player wins!")
     print("You picked:", player_pick, " The computer picked;", computer_pick)
 elif player_pick == "paper" and computer_pick == "rock":
