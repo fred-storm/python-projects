@@ -1,8 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
-from requests.models import Response
 
-url = "https://lbsdbearcatcafe.com/index.php?sid=2207151448241738&page=menus"
+url = "https://lbsdbearcatcafe.com2/index.php?"
 
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (64.0.0.0) Safari/537.36"
@@ -26,5 +25,5 @@ try:
 
     else:
         print(f"Failed to retrieve data. Status Code: {response.status_code}")
-except Exception as e:
+except requests.exceptions.RequestException as e:
     print(f"An error occured: {e}")
