@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-url = "https://lbsdbearcatcafe.com2/index.php?"
+url = "https://lbsdk12.nutrislice.com/menu"
 
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (64.0.0.0) Safari/537.36"
@@ -22,6 +22,10 @@ try:
             link_href = link.get("href")
             link_text = link.text.strip()
             print(f"- {link_text}: {link_href}")
+        for listitem in soup.find_all("a"):
+            item_name = listitem.text.strip()
+            item_info = listitem.get("href")
+            print(f">{item_name} : {item_info}")
 
     else:
         print(f"Failed to retrieve data. Status Code: {response.status_code}")
